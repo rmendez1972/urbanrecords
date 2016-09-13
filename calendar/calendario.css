@@ -1,0 +1,59 @@
+.calendarioRT{
+	
+}
+.calTabla{
+	background-color:#FFFFFF;
+	border-color:#DADADA;
+	border-width:2px;
+	border-style:solid;
+	text-align:center;
+	font-size:9px;
+	border-radius:0px;
+}
+.calMes{
+	color:#000;
+	font-weight:bold;
+	background-color:#DADADA;
+	font-size:9px;
+	text-align:center;
+	border-radius:0px;
+}
+.calDias{
+	border-radius:0px;
+	font-weight:bold;
+	background-color:#B4D8AB;
+	color:#000;
+	font-size:9px;
+	text-align:center;
+	padding:4px;
+}
+.calNum{
+
+}
+.btnCalCerrar{
+	border-radius:0px;
+	padding:3px;
+	border-width:1px;
+	border-color:#999;
+	border-style:solid;
+	margin:2px;
+	cursor:pointer;
+	background-color:#CCC;
+	color:#933;
+	font-weight:bold;
+}
+.nodia{
+	background-color:#FFF;
+	padding:4px;
+}
+.diames{
+	background-color:#EBEBEB;
+	border-width:1px;
+	border-color:#BFDCBE;
+	border-style:solid;
+	font-size:9px;
+	text-align:center;
+	border-radius:0px;
+	padding:4px;
+	cursor:pointer;
+}
