@@ -24,21 +24,21 @@ body{
 	z-index:4;
 	width:320px;
 	height:100px;
-	
+
 	border-radius: 6px 6px 0 0;
 }
 #notifTxt{
-	font-weight:bold;	
+	font-weight:bold;
 }
 #notifImg{
 	position:absolute;
 	top:6px;
-	right:6px;	
+	right:6px;
 }
 #mnupick{
 	position:absolute;
 	display:none;
-	bottom:0px;	
+	bottom:0px;
 }
 #lefts{
 	height:100%;
@@ -58,25 +58,25 @@ body{
 }
 #menu{
 	position:relative;
-	background-color:#C00;
+	background-color:#002e49;
 	display:table;
 	width:100%;
 	font-size:11px;
-	
+
 	border-top-width:2px;
 	border-top-style:solid;
-	border-top-color:#990000;
+	border-top-color:#E9EBEB;
 }
 #submenu{
-	background-color:#BACD19;
+	background-color:#00A6Cf;
 	height:33px;
 	width:100%;
 	font-size:11px;
 	position:relative;
-	
+
 	border-bottom-width:2px;
 	border-bottom-style:solid;
-	border-bottom-color:#98AB07;
+	border-bottom-color:#E9EBEB;
 }
 .datusr{
 	position:absolute;
@@ -84,13 +84,15 @@ body{
 	top:3px;
 	text-align:right;
 	font-weight:bold;
+	color:#E9EBEB;
 }
 .submenuC{
 	display:none;
 }
 #bottom{
-	background:url(../images/bottom.png);
-	height:70px;	
+	//background:url(../images/bottom.png);
+	background-color: #00A6CA;
+	height:70px;
 }
 .btnMenu{
 	cursor:pointer;
@@ -103,12 +105,12 @@ body{
 	margin-left:0px;
 	font-weight:bold;
 	border-right-width:1px;
-	border-right-color:#FFF;
+	border-right-color:#E9EBEB;
 	border-right-style:solid;
-	color:#FFF;
+	color:#E9EBEB;
 }
 .btnMenu:hover{
-	background-color:#EF0000;
+	background-color:silver;
 }
 .btnSMenu{
 	cursor:pointer;
@@ -117,14 +119,15 @@ body{
 	padding-left:18px;
 	padding-right:18px;
 	font-weight:bold;
+	color:#E9EBEB;
 }
 .btnSMenu:hover{
 	color:#444;
-	background-color:#C4D623;	
+	background-color:silver;
 }
 .contFrame{
 	margin:30px;
-	margin-top:10px;	
+	margin-top:10px;
 }
 .tituSec{
 	text-align:center;
@@ -137,8 +140,8 @@ body{
 	text-align:center;
 	font-size:13px;
 	font-weight:bold;
-	color:#000;
-	background-color:#BACD19;
+	color:#E9EBEB;
+	background-color:#00A6Cf;
 }
 .regTab{
 	font-size:12px;
@@ -166,7 +169,7 @@ body{
 	background-color:#BFBFBF;
 }
 .imgBtnNo{
-	cursor:pointer;	
+	cursor:pointer;
 	margin-right:3px;
 }
 .btnVerde{
@@ -184,7 +187,7 @@ body{
 	margin:7px;
 }
 .btnVerde:hover{
-	background-color:#090;	
+	background-color:#090;
 }
 #divMunicipios{
 	margin-top:28px;
@@ -193,8 +196,8 @@ body{
 }
 #formCCP{
 	display:none;
-	position:absolute; 
-	left:368px; 
+	position:absolute;
+	left:368px;
 	top:0px;
 	padding:6px;
 	background-color:#FFF;
@@ -207,10 +210,10 @@ body{
 	border: 1px solid #CCC;
 	border-collapse: separate;
 	border-spacing: 0;
-	
+
 	border-right:0;
 	border-top:0;
-	
+
 	-webkit-border-radius: 6px 6px 6px 6px;
 	-moz-border-radius: 6px 6px 6px 6px;
 	border-radius: 6px 6px 6px 6px;
@@ -241,7 +244,7 @@ body{
 	border-radius: 0 0 6px 0;
 }
 input,textarea,select{
-	border-radius:3px;	
+	border-radius:3px;
 	border: 1px solid #CCC;
 }
 
@@ -256,27 +259,27 @@ input,textarea,select{
 	color:#000;
 	cursor:pointer;
 	float:left;
-	
+
 	padding:5px;
-	
+
 	border-radius:3px;
 	border-color:#CCC;
 	border-width:1px;
 	border-style:solid;
-	
+
 	margin:2px;
 	margin-right:5px;
-	
+
 	vertical-align:top;
 }
 .btnFrame:hover{
-	background-color:#F8F8F8;	
+	background-color:#F8F8F8;
 }
 
 input, select, textarea, label{
 	font-size:11px;
 	color:#333;
-	padding:3px;	
+	padding:3px;
 }
 
 .btnAceptar{
@@ -286,17 +289,17 @@ input, select, textarea, label{
 	color:#FFF;
 	cursor:pointer;
 	float:left;
-	
+
 	padding:5px;
-	
+
 	border-radius:3px;
 	border-color:#666;
 	border-width:1px;
 	border-style:solid;
-	
+
 	margin:2px;
 	margin-right:8px;
-	
+
 	vertical-align:top;
 }
 .btnAceptar:hover{
@@ -309,32 +312,32 @@ input, select, textarea, label{
 	color:#000;
 	cursor:pointer;
 	float:left;
-	
+
 	padding:5px;
-	
+
 	border-radius:3px;
 	border-color:#CCC;
 	border-width:1px;
 	border-style:solid;
-	
+
 	margin:2px;
 	margin-right:8px;
-	
+
 	vertical-align:top;
 }
 .btnCancelar:hover{
-	background-color:#F8F8F8;	
+	background-color:#F8F8F8;
 }
 .btnOld:hover{
-	cursor:pointer;	
+	cursor:pointer;
 }
 .editinput{
 	text-align:center;
 	border:0;
-	font-size:12px;	
+	font-size:12px;
 }
 .editable{
-	border-radius:3px;	
+	border-radius:3px;
 	border: 1px solid #CCC;
 }
 .improcedente{

@@ -6,7 +6,7 @@ header("Content-Type: text/html; charset=iso-8859-1 ");
 define('FPDF_FONTPATH','../font/');
 
 require('../libreria/fpdf.php');
-include ("../libreria/config.php"); 
+include ("../libreria/config.php");
 
 class PDF extends FPDF
 {
@@ -14,14 +14,14 @@ class PDF extends FPDF
 	//Encabezado
 	function Header()
 	{
-		
-		
-		//Logo
-		$this->Image('../images/LogoQRoo.png',10,10,45,20);
-		$this->Image('../images/SloganQroo.png',162,10,45,20);
-	
+
+
+		//Logo comentado en espera de nueva imagen de gobierno
+		//$this->Image('../images/LogoQRoo.png',10,10,45,20);
+		//$this->Image('../images/SloganQroo.png',162,10,45,20);
+
 		$this->SetFont('Arial','B',10);
-	
+
 		// titulo
 
 		$this->MultiCell(197,5,"Gobierno del Estado de Quintana Roo",0,'C',0);
@@ -35,43 +35,43 @@ class PDF extends FPDF
 		$this->SetFont('Arial','B',9);
 		$this->Ln(5);
 		$this->MultiCell(197,5,utf8_decode("CONSTANCIA DE COMPATIBILIDAD URBANÍSTICA ESTATAL"),0,'C',0);
-		
+
 
 //		$this->Ln(10);
-	
+
 		$this->SetFillColor(213,217,214);
 		$this->SetTextColor(0);
 		$this->SetDrawColor(128,128,128);
 		$this->SetLineWidth(.3);
 		$this->SetFont('Arial','',9);
-		
-		
+
+
 	}	//Fin del header
-	
-	
-	
+
+
+
 	//Page footer
 
-	//Pie de p�gina	
+	//Pie de p�gina
 	function Footer()
 	{
-		
+
 		$this->SetY(-15);
 		$this->SetFont('Arial','I',8);
 		$this->Cell(0,10,utf8_decode('Página ').$this->PageNo().'/{nb}',0,0,'C');
-		
+
 		$this->SetX(10);
 		$this->SetFont('Arial','',6);
 		$this->Cell(0,10,utf8_decode('Sistema de Control de Constancias de Compatibilidad Urbanística'),0,0,'L');
 		$this->SetFont('Arial','',6);
 		$this->Cell(0,10,utf8_decode('Fecha de impresión: '.date('Y-m-d  g:i a')),0,0,'R');
-		
+
 	}	//Fin del Footer
 
 
 function FancyTable($Servidor,$UsrMysql,$ClaveMysql,$DB)
 {
-	
+
     $this->SetFillColor(213,217,214);
   	$this->SetTextColor(0);
 	$this->SetDrawColor(128,128,128);
@@ -88,17 +88,17 @@ function FancyTable($Servidor,$UsrMysql,$ClaveMysql,$DB)
 
 		//mb_internal_encoding("UTF-8");
 
-		$consulta= "SELECT s.*, tp.descripcion AS tipo_proyecto, tp.abreviatura, cm.descripcion AS municipio 
-					FROM`solicitud` s, cat_tipo_proy tp, cat_municipios cm 
+		$consulta= "SELECT s.*, tp.descripcion AS tipo_proyecto, tp.abreviatura, cm.descripcion AS municipio
+					FROM`solicitud` s, cat_tipo_proy tp, cat_municipios cm
 					WHERE id_tipo=id_proyecto1 AND s.id_municipio=cm.id_municipio";
-					
-					
+
+
 		if (isset($_GET['anio']))
 			$consulta.= " AND anio=".$_GET['anio']."";
 
 		if (isset($_GET['id_solicitud']))
 			$consulta.= " AND s.id_solicitud=".$_GET['id_solicitud'];
-					
+
 		if (isset($_POST['anio']))
 			$consulta.= " AND anio=".$_POST['anio']."";
 
@@ -138,25 +138,25 @@ function FancyTable($Servidor,$UsrMysql,$ClaveMysql,$DB)
 		    $this->MultiCell(197,6,"Ficha No. ".$datos['id_solicitud']."/".$datos['abreviatura']."/".$datos['anio'],0,'C',1);
 			$this->SetFont('Arial','',8);
 			$this->Ln(5);
-	
+
 			$this->Cell(30,6,"PROPIETARIO:",0,0,'L',0);
 			$this->MultiCell(167,6,utf8_decode($datos['propietario']),'B','J',0);
 			$this->Cell(30,6,utf8_decode("TRÁMITE:"),0,0,'L',0);
-			$this->MultiCell(167,6,utf8_decode($datos["nombre_proyecto"]),'B','J',0);			
+			$this->MultiCell(167,6,utf8_decode($datos["nombre_proyecto"]),'B','J',0);
 			$this->Cell(30,6,utf8_decode("DIRECCIÓN:"),0,0,'L',0);
-			$this->MultiCell(167,6,utf8_decode($datos["direccion"]),'B','J',0);			
+			$this->MultiCell(167,6,utf8_decode($datos["direccion"]),'B','J',0);
 			$this->Cell(30,6,"MUNICIPIO:",0,0,'L',0);
-			$this->MultiCell(167,6,utf8_decode($datos["municipio"]),'B','J',0);			
-			
+			$this->MultiCell(167,6,utf8_decode($datos["municipio"]),'B','J',0);
+
 			if ($datos['id_localidad']!=0){
 					$consulta= "select * from cat_localidades WHERE id_municipio=".$datos['id_municipio']." AND id_localidad=".$datos['id_localidad'];
 
 					$sql_loc=mysql_query($consulta,$conexion) or die ("La consulta:<br>".$consulta."<br>No se realiz&oacute; correctamente.<br>Copie la sentencia y consulte con el administrador del sistema");
 					$localidad= mysql_fetch_array($sql_loc);
 					//echo strtoupper($localidad['descripcion']);
-					
+
 					$this->Cell(30,6,"LOCALIDAD:",0,0,'L',0);
-					$this->MultiCell(167,6,strtoupper(utf8_decode($localidad['descripcion'])),'B','J',0);					
+					$this->MultiCell(167,6,strtoupper(utf8_decode($localidad['descripcion'])),'B','J',0);
 			}
 
 			$consulta= "select * from solicitantes s, cat_tipo_solicitantes t WHERE s.id_tipo=t.id_tipo AND id_solicitud=".$datos['id_solicitud']." AND anio=".$datos['anio'];
@@ -174,21 +174,21 @@ function FancyTable($Servidor,$UsrMysql,$ClaveMysql,$DB)
 					$data_solicitante.=", CORREO: ".$solicitantes['correo'];
 
 			}
-			mysql_free_result($sql_solicitante);	
+			mysql_free_result($sql_solicitante);
 			$this->Cell(30,5,"SOLICITANTE",0,0,'L',0);
-			$this->MultiCell(167,5,$data_solicitante,'B','J',0);			
+			$this->MultiCell(167,5,$data_solicitante,'B','J',0);
 
 			if ($datos["observaciones"]!=""){
 				$this->Cell(30,5,"OBSERVACIONES:",0,0,'L',0);
-				$this->MultiCell(167,5,utf8_decode($datos["observaciones"]),'B','J',0);			
+				$this->MultiCell(167,5,utf8_decode($datos["observaciones"]),'B','J',0);
 			}
 
 	$this->Ln(4);
-		
+
 		$consulta= "select * from cat_requisitos r, doctos d WHERE r.id_requisito=d.id_requisito AND id_solicitud=".$datos['id_solicitud']." AND anio=".$datos['anio'];
 
 		$sql_req=mysql_query($consulta,$conexion) or die ("La consulta:<br>".$consulta."<br>No se realiz&oacute; correctamente.<br>Copie la sentencia y consulte con el administrador del sistema");
-			
+
 			$w=array(30,167);
 			$this->SetFont('Arial','B',8);
 			$this->SetWidths($w,array('C','C'),5,1);
@@ -198,7 +198,7 @@ function FancyTable($Servidor,$UsrMysql,$ClaveMysql,$DB)
 			while($requisitos= mysql_fetch_array($sql_req)){
 				$this->Row(array(utf8_decode($requisitos['entrego']),utf8_decode($requisitos['descripcion'])),array(0));
 			}
-		
+
 			$this->Ln(4);
 			$w=array(130,67);
 			$this->SetWidths($w,array('C','C'),4,0);
@@ -212,25 +212,25 @@ function FancyTable($Servidor,$UsrMysql,$ClaveMysql,$DB)
 
 
 			$this->Ln(4);
-		
+
 			$this->SetY(240);
 			$pie="*En cumplimiento a lo previsto por el artículo 33, fracción III de la ley de Transparencia y Acceso a la Información Pública del Estado de Quintana Roo, se le informa que el propósito de recabar sus datos personales se circunscribe única y exclusivamente a contar con la información que señala el artículo 51 de la citada ley, para atender y dar seguimiento a la solicitud.";
 			$this->MultiCell(197,4,utf8_decode($pie),0,'J',0);
-			
+
 			$this->Ln(2);
-			
+
 			$this->SetFont('Arial','B',7.5);
 			$this->SetTextColor(200,0,0);
 			$this->MultiCell(197,4,utf8_decode("PARA GENERAR SU ORDEN DE PAGO ANTE TRIBUTANET DEBERÁ OBTENER PREVIAMENTE LA ORDEN DE PAGO QUE OTORGA ESTA DEPENDENCIA"),0,"C",0);
 			$this->SetTextColor(0,0,0);
 		}
-		mysql_free_result($resultado);	
-		
-		
+		mysql_free_result($resultado);
 
-	
+
+
+
 	mysql_close($conexion);
-	
+
 } // fin del function
 }// fin del class
 
@@ -243,6 +243,6 @@ $pdf->AddPage();
 $pdf->FancyTable($Servidor,$UsrMysql,$ClaveMysql,$DB);
 $pdf->Output();
 
-?> 
+?>
 
 

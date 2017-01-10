@@ -1,4 +1,4 @@
-<?PHP 
+<?PHP
 		$requiredUserLevel = array(1,2,3,4,5,6,7);
 		$cfgProgDir =  '../';
 		include('../seguridad/' . "secure.php");
@@ -7,7 +7,7 @@ include ("../libreria/config.php");
 include ("../libreria/libreria.php");
 
 $meses=array("","Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-$fecha = "Chetumal, Quintana Roo a ".date("d"); 
+$fecha = "Chetumal, Quintana Roo a ".date("d");
 $mes = $meses[date("n")];
 		$fecha .= " de ".$mes." ".date("Y");
 ?>
@@ -22,14 +22,14 @@ $mes = $meses[date("n")];
 	width:400px;
 	padding:20px;
 	color:#FFF;
-	background-color:#990000;
+	background-color:#002e49;
 	margin:auto;
 	margin-top:100px;
 	font-weight:bold;
 	font-size:14px;
 	border-width:2px;
 	border-style:solid;
-	border-color:#BACD19;
+	border-color:#E9EBEB;
 	border-radius:7px;
 }
 </style>
