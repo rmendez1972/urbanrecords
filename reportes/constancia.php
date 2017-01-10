@@ -17,8 +17,8 @@ class PDF extends FPDF
 
 
 		//Logo comentado en espera de nueva imagen de gobierno
-		//$this->Image('../images/LogoQRoo.png',10,10,45,20);
-		//$this->Image('../images/SloganQroo.png',162,10,45,20);
+		$this->Image('../images/LogoQRoo.png',10,10,45,20);
+		$this->Image('../images/SloganQroo.png',162,10,45,20);
 
 		$this->SetFont('Arial','B',10);
 
