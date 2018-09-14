@@ -19,7 +19,7 @@ private $status=1;
 		$this->SetFont('Arial','B',14);
 	
 		// titulo
-		$this->MultiCell(260,6,"SECRETAR�A DE DESARROLLO URBANO",0,'C',0);
+		$this->MultiCell(260,6,"SECRETAR�A DE DESARROLLO TERRITORIAL URBANO SUSTENTABLE",0,'C',0);
 		$this->SetFont('Arial','B',12);
 		$this->MultiCell(260,6,"Sistema de Control de Constancias de Compatibilidad Urban�stica",0,'C',0);
 		$this->SetX(55);

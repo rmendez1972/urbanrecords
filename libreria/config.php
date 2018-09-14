@@ -26,7 +26,7 @@ $Servidor='localhost';
 $UsrMysql='root'; 
 
 //$ClaveMysql='shalala';
-$ClaveMysql='admin';
+$ClaveMysql='SeDB.2015';
 
 $DB='constancias';
 

@@ -25,7 +25,7 @@ class PDF extends FPDF
 		// titulo
 
 		$this->MultiCell(197,5,"Gobierno del Estado de Quintana Roo",0,'C',0);
-		$this->MultiCell(197,5,utf8_decode("Secretaría de Desarrollo Urbano y Vivienda"),0,'C',0);
+		$this->MultiCell(197,5,utf8_decode("Secretaría de Desarrollo Territorial Urbano Sustentable"),0,'C',0);
 		$this->MultiCell(197,5,utf8_decode("Subsecretaría de Desarrollo Urbano"),0,'C',0);
 		$this->MultiCell(197,5,utf8_decode("DIRECCIÓN DE ADMINISTRACIÓN URBANA"),0,'C',0);
 		$this->SetFont('Arial','',8);
